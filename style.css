@@ -1042,3 +1042,114 @@ body::before {
     right: -100px;
     background: radial-gradient(circle, #0077ff, transparent 70%);
 }
+
+
+
+
+/* ============================================================================
+   WHITE ICONS FOR MAXIMUM CONTRAST
+   ============================================================================ */
+
+/* All section title icons - White on colored background */
+.hero-content h2 i,
+.upload-section h2 i,
+.project-stats h2 i,
+.authors h2 i {
+    background: linear-gradient(135deg, #ff6b00 0%, #0077ff 100%);
+    color: white !important;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 1.8rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    min-height: 50px;
+}
+
+/* Specific adjustments for each section */
+.hero-content h2 i {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8c42 100%);
+}
+
+.upload-section h2 i {
+    background: linear-gradient(135deg, #0077ff 0%, #00ccff 100%);
+    padding: 15px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.project-stats h2 i {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8c42 100%);
+    padding: 15px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+.authors h2 i {
+    background: linear-gradient(135deg, #0077ff 0%, #00ccff 100%);
+    padding: 15px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+
+/* Image box icons */
+.image-box h4 i {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8c42 100%);
+    color: white !important;
+    padding: 8px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-right: 12px;
+}
+
+/* Stat card icons - White with gradient border */
+.stat-card i {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: white !important;
+    background: linear-gradient(135deg, #ff6b00 0%, #0077ff 100%);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+}
+
+/* Upload area icon - Larger and more visible */
+.upload-icon {
+    font-size: 5rem;
+    color: white !important;
+    margin-bottom: 25px;
+    background: linear-gradient(135deg, #ff6b00 0%, #0077ff 100%);
+    padding: 30px;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    box-shadow: 
+        0 15px 30px rgba(255, 107, 0, 0.3),
+        0 0 60px rgba(0, 119, 255, 0.2);
+}
+
+/* Button icons - Always white */
+.browse-btn i,
+.download-btn i,
+.vs-circle i {
+    color: white !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
