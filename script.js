@@ -445,7 +445,7 @@ async function initialize() {
         demoIndicator.onclick = () => demoIndicator.remove();
         document.body.appendChild(demoIndicator);
     } else {
-        showNotification('✅ Connected to compression server', 'success');
+        //showNotification('✅ Connected to compression server', 'success');
     }
     
     // Add CSS for notification animation
