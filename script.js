@@ -1,5 +1,5 @@
 // Configuration
-const BACKEND_URL = "YOUR_HUGGING_FACE_SPACE_URL"; // Update this later
+const BACKEND_URL = "https://ayanmasud-medical-image-compressor-backend.hf.space";
 
 // DOM Elements
 const uploadArea = document.getElementById('uploadArea');
@@ -82,54 +82,19 @@ async function uploadAndCompress(file) {
     formData.append('image', file);
     
     try {
-        // Update progress
-        progressBar.style.width = '30%';
-        progressText.textContent = 'Sending to compression server...';
-        
-        // For now, simulate API call
-        // Replace with actual fetch when backend is ready
-        /*
-        const response = await fetch(`${BACKEND_URL}/compress`, {
+        const response = await fetch(`${BACKEND_URL}/api/predict`, {
             method: 'POST',
             body: formData
         });
         
-        if (!response.ok) {
-            throw new Error('Compression failed');
-        }
+        if (!response.ok) throw new Error('Compression failed');
         
         const result = await response.json();
-        */
-        
-        // Simulate processing delay
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        progressBar.style.width = '60%';
-        progressText.textContent = 'Processing with AI model...';
-        
-        await new Promise(resolve => setTimeout(resolve, 2000));
-        
-        progressBar.style.width = '100%';
-        progressText.textContent = 'Finalizing results...';
-        
-        // For demo - simulate results
-        const simulatedResult = {
-            compressed_image: originalImage.src, // In real app, this would be the compressed image URL
-            metrics: {
-                compression_ratio: (Math.random() * 15 + 8).toFixed(1),
-                psnr: (Math.random() * 10 + 35).toFixed(1),
-                size_reduction: (Math.random() * 30 + 60).toFixed(1),
-                diagnostic_integrity: (Math.random() * 5 + 95).toFixed(1)
-            }
-        };
-        
-        // Display results
-        displayResults(simulatedResult);
+        displayResults(result);
         
     } catch (error) {
         console.error('Error:', error);
         alert('Compression failed. Please try again.');
-        progressContainer.style.display = 'none';
     }
 }
 
