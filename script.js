@@ -299,36 +299,54 @@ function showNotification(message, type = 'info') {
     const existing = document.querySelector('.notification');
     if (existing) existing.remove();
     
+    // Colors based on type
+    const colors = {
+        success: { bg: 'rgba(0, 119, 255, 0.15)', border: 'rgba(0, 119, 255, 0.3)', text: '#00ccff' },
+        warning: { bg: 'rgba(255, 107, 0, 0.15)', border: 'rgba(255, 107, 0, 0.3)', text: '#ff8c42' },
+        info: { bg: 'rgba(30, 30, 40, 0.9)', border: 'rgba(255, 255, 255, 0.1)', text: '#ffffff' }
+    };
+    
+    const color = colors[type];
+    
     // Create notification
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.innerHTML = `
         <div style="
             position: fixed;
-            top: 20px;
-            right: 20px;
-            background: ${type === 'success' ? '#4CAF50' : type === 'warning' ? '#FF9800' : '#2196F3'};
-            color: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            top: 30px;
+            right: 30px;
+            background: ${color.bg};
+            color: ${color.text};
+            padding: 20px 25px;
+            border-radius: 16px;
+            border: 1px solid ${color.border};
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             z-index: 10000;
             display: flex;
             align-items: center;
-            gap: 10px;
-            animation: slideIn 0.3s ease;
-            max-width: 400px;
+            gap: 15px;
+            animation: slideIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            max-width: 450px;
+            min-width: 300px;
+            font-weight: 600;
         ">
-            <span style="font-size: 20px;">${type === 'success' ? '✅' : type === 'warning' ? '⚠️' : 'ℹ️'}</span>
+            <span style="
+                font-size: 24px;
+                filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            ">${type === 'success' ? '🚀' : type === 'warning' ? '⚠️' : 'ℹ️'}</span>
             <span>${message}</span>
             <button onclick="this.parentElement.remove()" style="
                 background: none;
                 border: none;
-                color: white;
-                font-size: 20px;
+                color: ${color.text};
+                font-size: 24px;
                 cursor: pointer;
-                margin-left: 10px;
-                padding: 0 5px;
+                margin-left: auto;
+                padding: 0 8px;
+                opacity: 0.7;
+                transition: opacity 0.2s;
             ">×</button>
         </div>
     `;
@@ -338,7 +356,12 @@ function showNotification(message, type = 'info') {
     // Auto-remove after 5 seconds
     setTimeout(() => {
         if (notification.parentElement) {
-            notification.remove();
+            notification.style.animation = 'slideOut 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+            setTimeout(() => {
+                if (notification.parentElement) {
+                    notification.remove();
+                }
+            }, 400);
         }
     }, 5000);
 }
