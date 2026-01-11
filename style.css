@@ -265,7 +265,7 @@ body::before {
 }
 
 .upload-section h2 i {
-    background: linear-gradient(135deg, #0077ff 0%, #00ccff 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8c42 100%);
     color: white !important;
     padding: 15px;
     border-radius: 50%;
@@ -798,7 +798,7 @@ body::before {
 }
 
 .authors h2 i {
-    background: linear-gradient(135deg, #0077ff 0%, #00ccff 100%);
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8c42 100%);
     color: white !important;
     padding: 15px;
     border-radius: 50%;
