@@ -116,7 +116,7 @@ body::before {
 
 .logo-icon i {
     font-size: 2.8rem;
-    color: white;
+    color: white !important;
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
@@ -187,10 +187,16 @@ body::before {
 
 .hero-content h2 i {
     background: linear-gradient(135deg, #ff6b00 0%, #ff8c42 100%);
+    color: white !important;
     padding: 12px;
     border-radius: 12px;
     font-size: 1.8rem;
-    box-shadow: 0 5px 15px rgba(255, 107, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    min-height: 50px;
 }
 
 .hero-content p {
@@ -259,11 +265,17 @@ body::before {
 }
 
 .upload-section h2 i {
-    font-size: 2.5rem;
-    background: linear-gradient(135deg, #ff6b00 0%, #ff8c42 100%);
+    background: linear-gradient(135deg, #0077ff 0%, #00ccff 100%);
+    color: white !important;
     padding: 15px;
     border-radius: 50%;
-    box-shadow: 0 10px 20px rgba(255, 107, 0, 0.3);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    font-size: 2.5rem;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .upload-area {
@@ -304,9 +316,20 @@ body::before {
 
 .upload-icon {
     font-size: 5rem;
-    color: #ff6b00;
+    color: white !important;
     margin-bottom: 25px;
-    filter: drop-shadow(0 5px 15px rgba(255, 107, 0, 0.3));
+    background: linear-gradient(135deg, #ff6b00 0%, #0077ff 100%);
+    padding: 30px;
+    border-radius: 50%;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    box-shadow: 
+        0 15px 30px rgba(255, 107, 0, 0.3),
+        0 0 60px rgba(0, 119, 255, 0.2);
 }
 
 .upload-area h3 {
@@ -370,6 +393,11 @@ body::before {
 
 .browse-btn:active {
     transform: translateY(-1px);
+}
+
+.browse-btn i {
+    color: white !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .formats {
@@ -497,6 +525,18 @@ body::before {
     font-weight: 600;
 }
 
+.image-box h4 i {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8c42 100%);
+    color: white !important;
+    padding: 8px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+}
+
 .image-box img {
     width: 100%;
     height: 300px;
@@ -547,6 +587,11 @@ body::before {
     }
 }
 
+.vs-circle i {
+    color: white !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
 .download-btn {
     background: linear-gradient(135deg, #0077ff 0%, #00ccff 100%);
     color: white;
@@ -569,6 +614,11 @@ body::before {
     box-shadow: 
         0 12px 25px rgba(0, 119, 255, 0.4),
         0 0 40px rgba(0, 119, 255, 0.3);
+}
+
+.download-btn i {
+    color: white !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 /* Stats Grid - Cyber Cards */
@@ -611,11 +661,16 @@ body::before {
 .stat-card i {
     font-size: 3rem;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #ff6b00 0%, #ff8c42 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    filter: drop-shadow(0 5px 10px rgba(255, 107, 0, 0.2));
+    color: white !important;
+    background: linear-gradient(135deg, #ff6b00 0%, #0077ff 100%);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
 }
 
 .stat-card h3 {
@@ -661,6 +716,19 @@ body::before {
     justify-content: center;
     gap: 20px;
     font-weight: 800;
+}
+
+.project-stats h2 i {
+    background: linear-gradient(135deg, #ff6b00 0%, #ff8c42 100%);
+    color: white !important;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .stats-highlight {
@@ -729,6 +797,19 @@ body::before {
     font-weight: 800;
 }
 
+.authors h2 i {
+    background: linear-gradient(135deg, #0077ff 0%, #00ccff 100%);
+    color: white !important;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .authors-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -774,7 +855,7 @@ body::before {
     justify-content: center;
     margin: 0 auto 25px;
     font-size: 2.5rem;
-    color: white;
+    color: white !important;
     box-shadow: 
         0 15px 30px rgba(255, 107, 0, 0.3),
         0 0 50px rgba(255, 107, 0, 0.2);
@@ -937,6 +1018,31 @@ body::before {
     .upload-area {
         padding: 50px 20px;
     }
+    
+    /* Adjust icons for mobile */
+    .hero-content h2 i,
+    .upload-section h2 i,
+    .project-stats h2 i,
+    .authors h2 i {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        padding: 10px;
+    }
+    
+    .stat-card i {
+        width: 60px;
+        height: 60px;
+        font-size: 2.5rem;
+        padding: 12px;
+    }
+    
+    .upload-icon {
+        width: 100px;
+        height: 100px;
+        font-size: 4rem;
+        padding: 20px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -972,6 +1078,24 @@ body::before {
     
     .upload-area h3 {
         font-size: 1.6rem;
+    }
+    
+    /* Further adjust icons for small screens */
+    .hero-content h2 i,
+    .upload-section h2 i,
+    .project-stats h2 i,
+    .authors h2 i {
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
+        padding: 8px;
+    }
+    
+    .upload-icon {
+        width: 80px;
+        height: 80px;
+        font-size: 3rem;
+        padding: 15px;
     }
 }
 
@@ -1043,63 +1167,25 @@ body::before {
     background: radial-gradient(circle, #0077ff, transparent 70%);
 }
 
-
-
-
-/* ============================================================================
-   MINIMALIST WHITE OUTLINE ICONS
-   ============================================================================ */
-
-.hero-content h2 i,
-.upload-section h2 i,
-.project-stats h2 i,
-.authors h2 i {
-    color: #ff6b00 !important;
-    background: rgba(255, 107, 0, 0.1);
-    padding: 12px;
-    border-radius: 12px;
-    font-size: 1.8rem;
-    border: 2px solid rgba(255, 107, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 50px;
-    min-height: 50px;
+/* Notification Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
-/* Color variations by section */
-.hero-content h2 i {
-    color: #ff6b00 !important;
-    border-color: rgba(255, 107, 0, 0.3);
-    background: rgba(255, 107, 0, 0.05);
-}
-
-.upload-section h2 i {
-    color: #0077ff !important;
-    border-color: rgba(0, 119, 255, 0.3);
-    background: rgba(0, 119, 255, 0.05);
-    padding: 15px;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-}
-
-.project-stats h2 i {
-    color: #ff6b00 !important;
-    border-color: rgba(255, 107, 0, 0.3);
-    background: rgba(255, 107, 0, 0.05);
-    padding: 15px;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-}
-
-.authors h2 i {
-    color: #0077ff !important;
-    border-color: rgba(0, 119, 255, 0.3);
-    background: rgba(0, 119, 255, 0.05);
-    padding: 15px;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 }
