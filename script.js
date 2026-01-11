@@ -1,3 +1,23 @@
+// Add at the beginning of your script.js
+console.log('=== Medical Image Compressor Debug ===');
+console.log('Backend URL:', BACKEND_URL);
+console.log('Current origin:', window.location.origin);
+
+// Add network logging
+const originalFetch = window.fetch;
+window.fetch = function(...args) {
+    console.log('Fetch called:', args[0], args[1]);
+    return originalFetch.apply(this, args)
+        .then(response => {
+            console.log('Fetch response:', response.url, response.status);
+            return response;
+        })
+        .catch(error => {
+            console.error('Fetch error:', error);
+            throw error;
+        });
+};
+
 // Configuration
 const BACKEND_URL = "https://ayanmasud-medical-image-compressor-backend.hf.space";
 
