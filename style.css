@@ -16,6 +16,8 @@ body {
     color: #f0f0f0;
     line-height: 1.6;
     overflow-x: hidden;
+    background-attachment: fixed; /* Add this line */
+    background-size: cover; /* Add this line */
 }
 
 /* Background Pattern */
@@ -1187,5 +1189,17 @@ body::before {
     to {
         transform: translateX(100%);
         opacity: 0;
+    }
+}
+
+/* Fix white space on mobile */
+@media (max-width: 768px) {
+    html, body {
+        background: #0a0a0a !important;
+        min-height: 100% !important;
+    }
+    
+    body {
+        background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) fixed !important;
     }
 }
