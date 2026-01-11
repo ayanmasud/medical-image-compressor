@@ -79,49 +79,21 @@ function handleFile(file) {
 // Upload to Backend
 async function uploadAndCompress(file) {
     try {
-        // Convert file to base64
-        const base64Image = await fileToBase64(file);
+        const formData = new FormData();
+        formData.append('file', file);
         
-        progressBar.style.width = '30%';
-        progressText.textContent = 'Uploading to server...';
-        
-        // Use Gradio's API endpoint
-        const response = await fetch(`${BACKEND_URL}/api/compress`, {
+        const response = await fetch(`${BACKEND_URL}/compress`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                data: [base64Image]
-            })
+            body: formData
         });
         
-        if (!response.ok) {
-            throw new Error(`Server returned ${response.status}: ${response.statusText}`);
-        }
+        if (!response.ok) throw new Error('Compression failed');
         
-        progressBar.style.width = '70%';
-        progressText.textContent = 'Processing with AI model...';
-        
-        const result = await response.json();
-        
-        if (!result.success) {
-            throw new Error(result.error || 'Compression failed');
-        }
-        
-        progressBar.style.width = '100%';
-        progressText.textContent = 'Complete!';
-        
-        // Display results
-        displayResults(result);
+        return await response.json();
         
     } catch (error) {
-        console.error('API Error:', error);
-        
-        // Fallback to demo mode
-        alert(`API Error: ${error.message}. Using demo mode with simulated results.`);
-        showDemoResults(file);
+        console.error('Error:', error);
+        throw error;
     }
 }
 
