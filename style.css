@@ -1203,3 +1203,27 @@ body::before {
         background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%) fixed !important;
     }
 }
+
+/* LinkedIn Link Styling */
+.author-role a {
+    all: inherit; /* Inherit all styles from .author-role */
+    text-decoration: none !important;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Prevent color changes on any state */
+.author-role a:link,
+.author-role a:visited,
+.author-role a:hover,
+.author-role a:active {
+    color: #00ccff !important;
+    text-decoration: none !important;
+}
+
+/* Add hover effect */
+.author-role a:hover {
+    background: rgba(0, 119, 255, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 119, 255, 0.2);
+}
